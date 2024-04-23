@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+} */
+
+body {
+  color: rgb(var(--foreground-rgb));
+  /* background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    ) */
+    /* rgb(var(--background-start-rgb)); */
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* styles.css */
+
+.wrapper {
+  position: relative;
+}
+
+.wrapper:hover .letter {
+  transform: translateY(-35px);
+  transition: 0.5s ease-in-out; 
+}
+
+.wrapper:hover .shadowl {
+  text-shadow: -6px 2px 7px rgba(0, 0, 0, 0.5);
+  transition: 0.5s ease-in-out; 
+}
+
+.toggle {
+  position: fixed;
+  top: 40px;
+  left: 40px;
+  z-index: 2;
+}
+
+/* .toggle a */
+.toggle a {
+  text-decoration: none;
+  color: #262626;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* .menu */
+.menu {
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #FFF;
+  z-index: 1;
+  transition: 0.5s;
+}
+
+/* ul */
+.menu ul {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* ul li */
+.menu ul li {
+  list-style: none;
+}
+
+/* ul li a */
+.menu ul li a {
+  padding: 10px;
+  display: inline-block;
+  font-family: verdana;
+  font-size: 2em;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #262626;
+}
+
+/* ul li a:hover */
+.menu ul li a:hover {
+  background: #FFFC85;
+}
+
+/* .menu.active */
+.menu.active {
+  left: 0;
+  overflow: auto;
+}
+
+/* _flipcard.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 350px;
+  height: 500px;
+  perspective: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container:hover > .card {
+  cursor: pointer;
+  transform: rotateY(180deg) rotateZ(180deg);
+}
+
+.card {
+  height: 80%; /* Reduced size by 20% */
+  width: 80%; /* Reduced size by 20% */
+  position: relative;
+  transition: transform 1500ms;
+  transform-style: preserve-3d;
+}
+
+.front,
+.back {
+  height: 100%;
+  width: 100%;
+  border-radius: 2rem;
+  box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.front {
+  background-image: url("https://oyster.ignimgs.com/mediawiki/apis.ign.com/balatro/4/49/Balatro-red_deck.png?width=2240");
+  background-size: cover; /* Ensure the background image covers the entire front */
+  background-position: center;
+}
+
+.back {
+  background-image: url("https://oyster.ignimgs.com/mediawiki/apis.ign.com/balatro/8/8e/Chicot.png?width=2240");
+  background-size: cover; /* Ensure the background image covers the entire back */
+  background-position: center;
+  transform: rotateY(180deg) rotateZ(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+

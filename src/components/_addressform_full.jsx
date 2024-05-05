@@ -1,9 +1,7 @@
-const { default: AddressFormPt1 } = require("./_addressform_pt1")
+import AddressForm from "./_addressform"
 
 const AddressFormFull = () => {
-    return (
-        <AddressFormPt1 />
-    )
+  return <AddressForm />
 }
 
-export default AddressFormFull;
+export default AddressFormFull

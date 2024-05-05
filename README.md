@@ -4,6 +4,9 @@
 It's a FullStack website wchich is based on:
 - **NextJS**
 - **Tailwind CSS**
+- **MongoDB**
+- **Axios**
+**...**
 
 Database via MongoDB
 
@@ -81,7 +84,8 @@ So in `_navbar.jsx` you could see different links that are rendered by using `Li
             <Link href="/">Home</Link>
           </li>
           <li>
-            <a href="#">Spots</a>
+            <Link href="/list/places">Spots
+            </Link>
           </li>
           <li>
             <Link href="/place/insert">New Spot?</Link>
@@ -124,11 +128,9 @@ So in `_navbar.jsx` you could see different links that are rendered by using `Li
 
 It's a page to insert a new place so it's a form to insert infomation about a place such as: address, name, type of establishement ect.
 
-Mainly composed of 2 components `src/components/_addressform_pt1.jsx` & `src/components/_addressform_pt2.jsx` that assembled in `src/components/_addressform_full.jsx` and it's referred at `src/pages/place/insert.jsx`
+Mainly composed of component `src/components/_addressform_pt` that assembled in `src/components/_addressform_full.jsx` and it's referred at `src/pages/place/insert.jsx`
 
-Nothing remarkable at this page execpt the source code of `_addressform_pt2.jsx` and how I implemeted rating and price level
 
-> :warning: **I strongly advise against opening the source code for the second part of form page**: beware
 
 > Average Price rating implementation
 ```javascript
@@ -165,10 +167,6 @@ Nothing remarkable at this page execpt the source code of `_addressform_pt2.jsx`
 ## About 
 
 Originally this page is designed to show information about the site but after thinking about it for a while I decided to redesign it to show what I plan to do in the future. The card will indicate the place that was added. Honestly, I do not know how I will render all the added places by cards. The main feature is that when you turn the card in the opposite direction will show information about the place
-
-```video[about]```
-
-...
 
 By applying these css effect I could achieve this result
 
@@ -229,3 +227,9 @@ By applying these css effect I could achieve this result
   gap: 5rem;
 }
 ```
+
+### MongoDB
+
+I'm using MongoDB as a database to store the data, I'm using Mongoose to interact with the database. Located in `/src/database`. API to connect to the database is located in `/src/api/create_root.js`. To see link to database check *.env* file 
+
+

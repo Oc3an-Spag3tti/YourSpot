@@ -23,7 +23,7 @@ body {
       transparent,
       rgb(var(--background-end-rgb))
     ) */
-    /* rgb(var(--background-start-rgb)); */
+  /* rgb(var(--background-start-rgb)); */
 }
 
 @layer utilities {
@@ -40,12 +40,12 @@ body {
 
 .wrapper:hover .letter {
   transform: translateY(-35px);
-  transition: 0.5s ease-in-out; 
+  transition: 0.5s ease-in-out;
 }
 
 .wrapper:hover .shadowl {
   text-shadow: -6px 2px 7px rgba(0, 0, 0, 0.5);
-  transition: 0.5s ease-in-out; 
+  transition: 0.5s ease-in-out;
 }
 
 .toggle {
@@ -72,7 +72,7 @@ body {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: #FFF;
+  background: #fff;
   z-index: 1;
   transition: 0.5s;
 }
@@ -106,7 +106,7 @@ body {
 
 /* ul li a:hover */
 .menu ul li a:hover {
-  background: #FFFC85;
+  background: #fffc85;
 }
 
 /* .menu.active */
@@ -171,4 +171,5 @@ body {
   align-items: center;
   gap: 5rem;
 }
+
 
